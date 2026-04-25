@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Graph GUI — Dijkstra vs A*</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Graph GUI — Dijkstra vs A*</h1>
+
+    <div class="controls">
+      <label>Preset:
+        <select id="presetSelect">
+          <option value="minimal">Minimal (5 nodes)</option>
+          <option value="small">Small City (10 nodes)</option>
+          <option value="large">Large City (15 nodes)</option>
+        </select>
+      </label>
+      <label>Start:
+        <select id="startSelect"></select>
+      </label>
+      <label>Goal:
+        <select id="goalSelect"></select>
+      </label>
+      <button id="runBoth">Run Both (Compare)</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <div id="results" aria-live="polite"></div>
+
+    <svg id="graph" viewBox="0 0 400 400"></svg>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
