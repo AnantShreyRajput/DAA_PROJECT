@@ -1,12 +1,13 @@
 // Graph presets: minimal, small (10 nodes), large (15 nodes)
 const presets = {
   minimal: {
+    // use grid coords (0..8) so scaling is consistent with other presets
     nodes: [
-      {id: 'A', x: 80,  y: 80},
-      {id: 'B', x: 320, y: 80},
-      {id: 'C', x: 200, y: 180},
-      {id: 'D', x: 80,  y: 320},
-      {id: 'E', x: 320, y: 320}
+      {id: 'A', x: 1, y: 7},
+      {id: 'B', x: 7, y: 7},
+      {id: 'C', x: 4, y: 5},
+      {id: 'D', x: 1, y: 1},
+      {id: 'E', x: 7, y: 1}
     ],
     edges: [
       ['A','B',2.0],['A','C',1.5],['B','C',1.0],['C','D',2.0],['C','E',2.0],['D','E',3.0]
@@ -47,7 +48,7 @@ const presets = {
   }
 };
 
-let nodes = presets.minimal.nodes.map(n=>({id:n.id, x:n.x*40+60, y:(8-(n.y||n.y))*40+40, label:n.label||n.id}));
+let nodes = presets.minimal.nodes.map(n=>({id:n.id, x:(n.x||0)*40+60, y:(8-(n.y||0))*40+40, label:n.label||n.id}));
 let edges = presets.minimal.edges.map(e=>[e[0],e[1],e[2]]);
 
 const svg = document.getElementById('graph');
